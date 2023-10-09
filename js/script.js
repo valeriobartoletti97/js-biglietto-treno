@@ -9,27 +9,27 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 myDiv = document.getElementById('my-text');
 /* myDiv.innerHTML = prezzoFinale */
 
-var chilometri = parseInt(prompt('Quanti chilometri dovrai percorrere?'));
+let chilometri = parseInt(prompt('Quanti chilometri dovrai percorrere?'));
 console.log(chilometri);
-var età = parseInt(prompt('Quanti anni hai?'));
+let età = parseInt(prompt('Quanti anni hai?'));
 console.log(età);
-var tariffa = 0.21;
-var prezzoIntero = tariffa * chilometri;
+const tariffa = 0.21;
+let prezzoIntero = tariffa * chilometri;
 console.log(prezzoIntero);
-var sconto = 0;
+let sconto = 0;
 
 if (isNaN(chilometri) || isNaN(età)){
     myDiv.innerHTML = ('Inserisci correttamente i dati')
     window.location.reload()
 };
 if (età >= 65){
-    var sconto = (prezzoIntero * 0.4);
-    var prezzoFinale= prezzoIntero - sconto;
-    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoFinale + '€')
+    let sconto = (prezzoIntero * 0.4);
+    let prezzoFinale= prezzoIntero - sconto;
+    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoFinale.toFixed(2) + '€')
 } else if (età < 18){
-    var sconto = (prezzoIntero * 0.2);
-    var prezzoFinale= prezzoIntero - sconto;
-    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoFinale + '€')
+    let sconto = (prezzoIntero * 0.2);
+    let prezzoFinale= prezzoIntero - sconto;
+    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoFinale.toFixed(2) + '€')
 } else {
-    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoIntero + '€')
+    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoIntero.toFixed(2) + '€')
 };
