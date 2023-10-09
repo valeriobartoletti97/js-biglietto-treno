@@ -18,15 +18,18 @@ var prezzoIntero = tariffa * chilometri;
 console.log(prezzoIntero);
 var sconto = 0;
 
-
+if (isNaN(chilometri) || isNaN(età)){
+    myDiv.innerHTML = ('Inserisci correttamente i dati')
+    window.location.reload()
+};
 if (età >= 65){
     var sconto = (prezzoIntero * 0.4);
     var prezzoFinale= prezzoIntero - sconto;
-    console.log(prezzoFinale)
+    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoFinale + '€')
 } else if (età < 18){
     var sconto = (prezzoIntero * 0.2);
     var prezzoFinale= prezzoIntero - sconto;
-    console.log(prezzoFinale)
+    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoFinale + '€')
 } else {
-    console.log(prezzoIntero)
-}
+    myDiv.innerHTML= ('Il costo del suo biglietto è ' + prezzoIntero + '€')
+};
