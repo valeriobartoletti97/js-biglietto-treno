@@ -9,9 +9,24 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 myDiv = document.getElementById('my-text');
 /* myDiv.innerHTML = prezzoFinale */
 
-var chilometri = parseInt(prompt('Quanti chilometri dovrai percorrere?'))
-console.log(chilometri)
-var età = parseInt(prompt('Quanti anni hai?'))
-console.log(età)
-var tariffa = 0.21
+var chilometri = parseInt(prompt('Quanti chilometri dovrai percorrere?'));
+console.log(chilometri);
+var età = parseInt(prompt('Quanti anni hai?'));
+console.log(età);
+var tariffa = 0.21;
+var prezzoIntero = tariffa * chilometri;
+console.log(prezzoIntero);
+var sconto = 0;
 
+
+if (età >= 65){
+    var sconto = (prezzoIntero * 0.4);
+    var prezzoFinale= prezzoIntero - sconto;
+    console.log(prezzoFinale)
+} else if (età < 18){
+    var sconto = (prezzoIntero * 0.2);
+    var prezzoFinale= prezzoIntero - sconto;
+    console.log(prezzoFinale)
+} else {
+    console.log(prezzoIntero)
+}
